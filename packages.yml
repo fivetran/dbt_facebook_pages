@@ -1,2 +1,2 @@
 packages:
-  - local: ../dbt_facebook_pages_source
+  - git: "https://github.com/fivetran/dbt_facebook_pages_source"
