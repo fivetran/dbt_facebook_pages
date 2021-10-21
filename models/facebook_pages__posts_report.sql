@@ -29,7 +29,8 @@ with posts as (
         post_metrics.video_view_time,
         post_metrics.video_views,
         post_metrics.video_views_10s,
-        post_metrics.video_views_15s
+        post_metrics.video_views_15s,
+        post_metrics.reactions_like_total as likes
     from post_metrics
     left join posts
         on post_metrics.post_id = posts.post_id
