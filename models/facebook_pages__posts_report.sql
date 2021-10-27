@@ -20,6 +20,7 @@ with posts as (
         posts.created_timestamp,
         posts.post_id,
         posts.post_message,
+        posts.post_url,
         posts.page_id,
         pages.page_name,
         post_metrics.date_day,
