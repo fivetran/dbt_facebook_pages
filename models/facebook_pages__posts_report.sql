@@ -31,12 +31,15 @@ with posts as (
         post_metrics.video_views,
         post_metrics.video_views_10s,
         post_metrics.video_views_15s,
-        post_metrics.reactions_like_total as likes
+        post_metrics.reactions_like_total as likes,
+        post_metrics.source_relation
     from post_metrics
     left join posts
         on post_metrics.post_id = posts.post_id
+        and post_metrics.source_relation = posts.source_relation
     left join pages
         on posts.page_id = pages.page_id
+        and posts.source_relation = pages.source_relation
 
 )
 

@@ -22,10 +22,12 @@ with pages as (
         page_metrics.video_complete_views_30s,
         page_metrics.video_views,
         page_metrics.video_views_10s,
-        page_metrics.views_total
+        page_metrics.views_total,    
+        page_metrics.source_relation
     from page_metrics
     left join pages
         on page_metrics.page_id = pages.page_id
+        and page_metrics.source_relation = pages.source_relation
 
 )
 
