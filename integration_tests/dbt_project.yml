@@ -9,6 +9,10 @@ vars:
   lifetime_post_metrics_total: "{{ ref('facebook_pages_lifetime_post_metrics_total_data') }}"
   daily_page_metrics_total: "{{ ref('facebook_pages_daily_page_metrics_total_data') }}"
 
+dispatch:
+  - macro_namespace: dbt_utils
+    search_order: ['spark_utils', 'dbt_utils']
+
 seeds:
   facebook_pages_integration_tests:
     facebook_pages_post_history_data:
