@@ -11,6 +11,7 @@ with pages as (
 ), joined as (
 
     select 
+        page_metrics.date_day,
         pages.page_id,
         pages.page_name,
         page_metrics.actions_post_reactions_total,

@@ -18,6 +18,8 @@ models:
         description: The name of the page that posted the post.
       - name: date_day
         description: The date of the metric performance.
+        tests: 
+          - not_null
       - name: clicks
         description: The number of times the post was clicked.
       - name: impressions
@@ -36,14 +38,28 @@ models:
         description: The total amount of reactions with type 'like' on the post
       - name: source_relation
         description: The source of the record, if the unioning functionality is being used.
+      - name: is_most_recent_record
+        description: Boolean indicating if the record is the most recent record of the post.
 
   - name: facebook_pages__pages_report
     description: Each record represents the daily performance of a Facebook Page.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - page_id
+            - date_day
+            - source_relation
     columns:
       - name: page_id
         description: The ID of the Page.
+        tests:
+          - not_null
       - name: page_name
         description: The name of the Page.
+      - name: date_day
+        description: The date of the metric performance.
+        tests:
+          - not_null
       - name: actions_post_reactions_total
         description: The total number of reactions on posts.
       - name: fan_adds
