@@ -3,11 +3,19 @@ version: 2
 models:
   - name: facebook_pages__posts_report
     description: Each record represents the daily performance of a Facebook post.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - post_id
+            - date_day
+            - source_relation
     columns:
       - name: created_timestamp
         description: The time the post was initially published. For a post about a life event, this is the date and time of the life event.
       - name: post_id
         description: The ID of the post.
+        tests: 
+          - not_null
       - name: post_message
         description: The status message in the post.
       - name: post_url
