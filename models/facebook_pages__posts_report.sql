@@ -1,7 +1,7 @@
 with posts as (
 
     select *
-    from {{ var('posts') }}
+    from {{ ref('int_facebook_pages__lastest_post') }}
     where is_most_recent_record = True
 
 ), pages as (

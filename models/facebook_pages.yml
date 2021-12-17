@@ -14,8 +14,6 @@ models:
         description: The time the post was initially published. For a post about a life event, this is the date and time of the life event.
       - name: post_id
         description: The ID of the post.
-        tests: 
-          - not_null
       - name: post_message
         description: The status message in the post.
       - name: post_url
