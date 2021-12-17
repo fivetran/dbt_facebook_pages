@@ -74,3 +74,4 @@ jobs:
             dbt deps
             dbt seed --target spark --full-refresh
             dbt run --target spark --full-refresh
+            dbt test --target spark
