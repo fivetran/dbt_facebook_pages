@@ -26,7 +26,7 @@ packages:
 ```
 
 ## Package Maintenance
-The Fivetran team maintaining this package **only** maintains the latest version. We highly recommend you keep your `packages.yml` updated with the [dbt hub latest version](https://hub.getdbt.com/fivetran/facebook_pages/latest/). You may refer to the [CHANGELOG](/CHANGELOG.md) and release notes for more information on changes across versions.
+The Fivetran team maintaining this package **only** maintains the latest version. We highly recommend you keep your `packages.yml` updated with the [dbt hub latest version](https://hub.getdbt.com/fivetran/facebook_pages/latest/). You may refer to the [CHANGELOG](https://github.com/fivetran/dbt_facebook_pages/blob/main/CHANGELOG.md) and release notes for more information on changes across versions.
 
 ## Configuration
 By default, this package will look for your Facebook Pages data in the `facebook_pages` schema of your [target database](https://docs.getdbt.com/docs/running-a-dbt-project/using-the-command-line-interface/configure-your-profile). If this is not where your Facebook Pages data is, please add the following configuration to your `dbt_project.yml` file:
