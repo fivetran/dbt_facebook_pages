@@ -48,7 +48,7 @@ Include the following Facebook Pages package version in your `packages.yml`
 ```yaml
 packages:
   - package: fivetran/facebook_pages
-    version: [">=0.2.0", "<0.3.0"] # we recommend using ranges to capture non-breaking changes automatically
+    version: [">=0.3.0", "<0.4.0"] # we recommend using ranges to capture non-breaking changes automatically
 ```
 
 Do NOT include the `facebook_pages_source` package in this file. The transformation package itself has a dependency on it and will install the source package as well.
@@ -116,7 +116,7 @@ This dbt package is dependent on the following dbt packages. Please be aware tha
 ```yml
 packages:
     - package: fivetran/facebook_pages_source
-      version: [">=0.2.0", "<0.3.0"]
+      version: [">=0.3.0", "<0.4.0"]
 
     - package: fivetran/fivetran_utils
       version: [">=0.4.0", "<0.5.0"]
