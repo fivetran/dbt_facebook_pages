@@ -20,12 +20,14 @@ The main focus of the package is to transform the core social media object table
 
 This package also generates a comprehensive data dictionary of your source and modeled Facebook Pages data via the [dbt docs site](https://fivetran.github.io/dbt_facebook_pages/).
 
-You can also refer to the table below for a detailed view of all models materialized by default within this package.
+<!--section=“facebook_pages_transformation_model"-->
+You can also refer to the table below for a detailed view of all tables materialized by default within this package.
 
-| **model**                    | **description**                                                                                                        |
+| **Table**                    | **Description**                                                                                                        |
 | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | [facebook_pages__pages_report](https://github.com/fivetran/dbt_facebook_pages/blob/main/models/facebook_pages__pages_report.sql)         | Each record represents the daily performance of a Facebook Page. |
 | [facebook_pages__posts_report](https://github.com/fivetran/dbt_facebook_pages/blob/main/models/facebook_pages__posts_report.sql)     | Each record represents the daily performance of a Facebook post.                                                      |
+<!--section-end-->
 
 ## How do I use the dbt package?
 ### Step 1: Pre-Requisites
