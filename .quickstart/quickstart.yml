@@ -8,3 +8,8 @@ destination_configurations:
     dispatch:
       - macro_namespace: dbt_utils
         search_order: [ 'spark_utils', 'dbt_utils' ]
+
+public_models: [
+  "facebook_pages__pages_report",
+  "facebook_pages__posts_report"
+]
