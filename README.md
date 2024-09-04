@@ -108,6 +108,7 @@ vars:
 ### (Optional) Step 5: Orchestrate your models with Fivetran Transformations for dbt Core™
 <details><summary>Expand for configurations</summary>
 <br>
+    
 Fivetran offers the ability for you to orchestrate your dbt project through the [Fivetran Transformations for dbt Core™](https://fivetran.com/docs/transformations/dbt) product. Refer to the linked docs for more information on how to setup your project for orchestration through Fivetran.
 </details>
 
@@ -142,4 +143,3 @@ We highly encourage and welcome contributions to this package. Check out [this p
 ## Are there any resources available?
 - If you encounter any questions or want to reach out for help, see the [GitHub Issue](https://github.com/fivetran/dbt_facebook_pages/issues/new/choose section to find the right avenue of support for you.
 - If you would like to provide feedback to the dbt package team at Fivetran, or would like to request a future dbt package to be developed, then feel free to fill out our [Feedback Form](https://www.surveymonkey.com/r/DQ7K7WW).
-- Have questions or want to just say hi? Book a time during our office hours [here](https://calendly.com/fivetran-solutions-team/fivetran-solutions-team-office-hours) or send us an email at solutions@fivetran.com.
