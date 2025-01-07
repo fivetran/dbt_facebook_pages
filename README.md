@@ -33,9 +33,9 @@ Each Quickstart transformation job run materializes 11 models if all components 
 
 ## How do I use the dbt package?
 ### Step 1: Pre-Requisites
-You will need to ensure you have the following before leveraging the dbt package.
-- **Connector**: Have the Fivetran Facebook Pages connection syncing data into your warehouse.
-- **Database support**: This package has been tested on **BigQuery**, **Snowflake**, **Redshift**, **Databricks**, and **Postgres**. Ensure you are using one of these supported databases.
+To use this dbt package, you must have the following:
+- At least one Fivetran Facebook Pages connection syncing data into your destination.
+- A **BigQuery**, **Snowflake**, **Redshift**, **PostgreSQL**, or **Databricks** destination.
 
 #### Databricks Additional Configuration
 If you are using a Databricks destination with this package you will need to add the below (or a variation of the below) dispatch configuration within your root `dbt_project.yml`. This is required in order for the package to accurately search for macros within the `dbt-labs/spark_utils` then the `dbt-labs/dbt_utils` packages respectively.
