@@ -1,3 +1,9 @@
+# dbt_facebook_pages version.version
+
+## Documentation
+- Added Quickstart model counts to README. ([#15](https://github.com/fivetran/dbt_facebook_pages/pull/15))
+- Corrected references to connectors and connections in the README. ([#15](https://github.com/fivetran/dbt_facebook_pages/pull/15))
+
 # dbt_facebook_pages v0.3.0
 
 [PR #11](https://github.com/fivetran/dbt_facebook_pages/pull/11) includes the following breaking changes:
