@@ -14,7 +14,7 @@
 
 ## What does this dbt package do?
 
-- Produces modeled tables that leverage Facebook Pages from [Fivetran's connector](https://fivetran.com/docs/applications/facebook-pages) in the format described by [this ERD](https://fivetran.com/docs/applications/facebook_pages#schemainformation) and builds off the output of our [Facebook Pages source package](https://github.com/fivetran/dbt_facebook_pages_source).
+- Produces modeled tables that leverage Facebook Pages from [Fivetran's connector](https://fivetran.com/docs/applications/facebook-pages) in the format described by [this ERD](https://fivetran.com/docs/applications/facebook_pages#schemainformation).
 
 The main focus of the package is to transform the core social media object tables into analytics-ready models that can be easily unioned in to other social media platform packages to get a single view. This is aided by our [Social Media Reporting package](https://github.com/fivetran/dbt_social_media_reporting).
 
@@ -53,10 +53,10 @@ Include the following Facebook Pages package version in your `packages.yml`
 ```yaml
 packages:
   - package: fivetran/facebook_pages
-    version: [">=0.3.0", "<0.4.0"] # we recommend using ranges to capture non-breaking changes automatically
+    version: [">=1.0.0", "<1.1.0"] # we recommend using ranges to capture non-breaking changes automatically
 ```
 
-Do NOT include the `facebook_pages_source` package in this file. The transformation package itself has a dependency on it and will install the source package as well.
+> All required sources and staging models are now bundled into this transformation package. Do not include `fivetran/facebook_pages_source` in your `packages.yml` since this package has been deprecated.
 
 ### Step 3: Configure Your Variables
 #### Database and Schema Variables
@@ -78,9 +78,9 @@ By default, this package will build the Facebook Pages staging models within a s
 ```yml 
 models:
     facebook_pages:
-      +schema: my_new_schema_name # leave blank for just the target_schema
-    facebook_pages_source:
-      +schema: my_new_schema_name # leave blank for just the target_schema
+      +schema: my_new_schema_name # Leave +schema: blank to use the default target_schema.
+      staging:
+        +schema: my_new_schema_name # Leave +schema: blank to use the default target_schema.
 ```
 
 #### Change the source table references
@@ -121,9 +121,6 @@ This dbt package is dependent on the following dbt packages. These dependencies 
     
 ```yml
 packages:
-    - package: fivetran/facebook_pages_source
-      version: [">=0.3.0", "<0.4.0"]
-
     - package: fivetran/fivetran_utils
       version: [">=0.4.0", "<0.5.0"]
 
