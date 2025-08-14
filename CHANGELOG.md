@@ -8,7 +8,7 @@
   - All functionality from the source package has been merged into this transformation package for improved maintainability and clarity.
   - If you reference `fivetran/facebook_pages_source` in your `packages.yml`, you must remove this dependency to avoid conflicts.
   - Any source overrides referencing the `fivetran/facebook_pages_source` package will also need to be removed or updated to reference this package.
-  - Update any facebook_pages_source-scoped variables to be scoped to only under this package. See the [README](https://github.com/fivetran/dbt_facebook_ads?tab=readme-ov-file#change-the-build-schema) for how to configure the build schema of staging models.
+  - Update any facebook_pages_source-scoped variables to be scoped to only under this package. See the [README](https://github.com/fivetran/dbt_facebook_pages?tab=readme-ov-file#change-the-build-schema) for how to configure the build schema of staging models.
 - As part of the consolidation, vars are no longer used to reference staging models, and only sources are represented by vars. Staging models are now referenced directly with `ref()` in downstream models.
 
 ### dbt Fusion Compatibility Updates

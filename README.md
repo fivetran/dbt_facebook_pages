@@ -1,5 +1,5 @@
 
-# Facebook Pages Modeling dbt Package ([Docs](https://fivetran.github.io/dbt_facebook_pages/))
+# Facebook Pages dbt Package ([Docs](https://fivetran.github.io/dbt_facebook_pages/))
 
 <p align="left">
     <a alt="License"
