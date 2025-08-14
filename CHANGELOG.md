@@ -1,5 +1,4 @@
 # dbt_facebook_pages v1.0.0
-
 [PR #18](https://github.com/fivetran/dbt_facebook_pages/pull/18) includes the following updates:
 
 ## Breaking Changes
@@ -19,7 +18,9 @@
   - Removed all `accepted_values` tests.
   - Moved `loaded_at_field: _fivetran_synced` under the `config:` block in `src_facebook_pages.yml`.
 
-# dbt_facebook_pages version.version
+### Under the Hood
+- Updated conditions in `.github/workflows/auto-release.yml`.
+- Added `.github/workflows/generate-docs.yml`.  
 
 ## Documentation
 - Added Quickstart model counts to README. ([#15](https://github.com/fivetran/dbt_facebook_pages/pull/15))
