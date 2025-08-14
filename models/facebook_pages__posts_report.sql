@@ -7,12 +7,12 @@ with posts as (
 ), pages as (
 
     select *
-    from {{ var('pages') }}
+    from {{ ref('stg_facebook_pages__page') }}
 
 ), post_metrics as (
 
     select *
-    from {{ var('post_metrics') }}
+    from {{ ref('stg_facebook_pages__lifetime_post_metrics_total') }}
 
 ), joined as (
 

@@ -1,10 +1,10 @@
 name: 'facebook_pages_integration_tests'
-version: '0.3.0'
+version: '1.0.0'
 profile: 'integration_tests'
 config-version: 2
 
 vars:
-  facebook_pages_source:
+  facebook_pages:
     facebook_pages_daily_page_metrics_total_identifier: "facebook_pages_daily_page_metrics_total_data"
     facebook_pages_lifetime_post_metrics_total_identifier: "facebook_pages_lifetime_post_metrics_total_data"
     facebook_pages_page_identifier: "facebook_pages_page_data"
@@ -16,6 +16,8 @@ dispatch:
     search_order: ['spark_utils', 'dbt_utils']
 
 seeds:
+  +docs:
+    show: False
   facebook_pages_integration_tests:
     facebook_pages_post_history_data:
       +column_types:
@@ -31,3 +33,6 @@ seeds:
     facebook_pages_daily_page_metrics_total_data:
       +column_types:
         page_id: "{{ 'int64' if target.type == 'bigquery' else 'bigint' }}"
+flags:
+  send_anonymous_usage_stats: False
+  use_colors: True

@@ -1,13 +1,13 @@
 with pages as (
 
     select *
-    from {{ var('pages') }}
+    from {{ ref('stg_facebook_pages__page') }}
 
 ), page_metrics as (
 
     select *
-    from {{ var('page_metrics') }}
-
+    from {{ ref('stg_facebook_pages__daily_page_metrics_total') }}
+    
 ), joined as (
 
     select 
