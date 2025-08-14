@@ -1,7 +1,7 @@
 with posts as (
     
     select *
-    from {{ var('posts') }}
+    from {{ ref('stg_facebook_pages__post_history') }}
 
 ), most_recent_posts as (
 
