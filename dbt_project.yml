@@ -12,5 +12,7 @@ models:
     +schema: facebook_pages
     +materialized: table
     staging:
-      +schema: facebook_pages_source
-      +materialized: view
+      +schema: stg_facebook_pages
+      +materialized: table
+      tmp:
+        +materialized: view
