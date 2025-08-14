@@ -89,7 +89,7 @@ models:
 
 #### Change the source table references
 If an individual source table has a different name than the package expects, add the table name as it appears in your destination to the respective variable:
-> IMPORTANT: See this project's [`dbt_project.yml`](https://github.com/fivetran/dbt_facebook_pages_source/blob/main/dbt_project.yml) variable declarations to see the expected names.
+> IMPORTANT: See this project's [`dbt_project.yml`](https://github.com/fivetran/dbt_facebook_pages/blob/main/dbt_project.yml) variable declarations to see the expected names.
 
 ```yml
 vars:
@@ -145,5 +145,5 @@ These dbt packages are developed by a small team of analytics engineers at Fivet
 We highly encourage and welcome contributions to this package. Check out [this post](https://discourse.getdbt.com/t/contributing-to-a-dbt-package/657) on the best workflow for contributing to a package.
 
 ## Are there any resources available?
-- If you encounter any questions or want to reach out for help, see the [GitHub Issue](https://github.com/fivetran/dbt_facebook_pages/issues/new/choose section to find the right avenue of support for you.
+- If you encounter any questions or want to reach out for help, see the [GitHub Issue](https://github.com/fivetran/dbt_facebook_pages/issues/new/choose) section to find the right avenue of support for you.
 - If you would like to provide feedback to the dbt package team at Fivetran, or would like to request a future dbt package to be developed, then feel free to fill out our [Feedback Form](https://www.surveymonkey.com/r/DQ7K7WW).
