@@ -31,13 +31,13 @@ final as (
         date as date_day,
         post_id,
         post_clicks as clicks,
-        post_impressions as impressions,
-        post_impressions_fan as impressions_fan,
-        post_impressions_nonviral as impressions_nonviral,
-        post_impressions_organic as impressions_organic,
-        post_impressions_paid as impressions_paid,
-        post_impressions_viral as impressions_viral,
-        post_negative_feedback as negative_feedback,
+        post_impressions as impressions, -- Deprecated as of November, 2025. Will be removed in future release.
+        post_impressions_fan as impressions_fan, -- Deprecated as of November, 2025. Will be removed in future release.
+        post_impressions_nonviral as impressions_nonviral, -- Deprecated as of November, 2025. Will be removed in future release.
+        post_impressions_organic as impressions_organic, -- Deprecated as of November, 2025. Will be removed in future release.
+        post_impressions_paid as impressions_paid, -- Deprecated as of November, 2025. Will be removed in future release.
+        post_impressions_viral as impressions_viral, -- Deprecated as of November, 2025. Will be removed in future release.
+        post_negative_feedback as negative_feedback, -- Deprecated as of November, 2025. Will be removed in future release.
         post_reactions_anger_total as reactions_anger_total,
         post_reactions_haha_total as reactions_haha_total,
         post_reactions_like_total as reactions_like_total,

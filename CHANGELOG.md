@@ -1,3 +1,22 @@
+# dbt_facebook_pages v1.1.0
+
+## Schema/Data Change
+**2 total changes • 0 possible breaking changes**
+
+| Data Model(s) | Change type | Old | New | Notes |
+| ---------- | ----------- | -------- | -------- | ----- |
+| `facebook_pages__pages_report`, `stg_facebook_pages__daily_page_metrics_total` | Addition | N/A | `media_views` | Added new field to track media/content views on the page |
+| `facebook_pages__pages_report`, `facebook_pages__posts_report`, `stg_facebook_pages__daily_page_metrics_total`, `stg_facebook_pages__lifetime_post_metrics_total` | Deprecation | Multiple impression and fan-related fields | Marked as [DEPRECATED] | Fields deprecated as of November 2025 and will not be populated by the Fivetran Facebook Pages connector after this date. Fields will be removed in a future release. Deprecated fields include: `fan_adds`, `fan_removes`, `fans`, `fans_online_per_day`, `impressions`, `impressions_nonviral`, `impressions_organic`, `impressions_paid`, `impressions_viral`, `impressions_fan`, `negative_feedback`, and `places_checkin_total` |
+
+## Documentation
+- Added deprecation notices to all affected fields in yml documentation files, clearly indicating these fields will not be populated by the Fivetran Facebook Pages connector following November 2025 and will be removed in a future release.
+- Updated inline comments in staging models to indicate deprecated fields.
+
+## Under the Hood
+- Updated integration test schema names to standardize naming convention.
+- Added `integration_tests/tests/` directory for validation tests.
+- Updated integration test configuration to include models schema setting.
+
 # dbt_facebook_pages v1.0.0
 [PR #18](https://github.com/fivetran/dbt_facebook_pages/pull/18) includes the following updates:
 

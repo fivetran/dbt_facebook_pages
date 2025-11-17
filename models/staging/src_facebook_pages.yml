@@ -249,19 +249,40 @@ sources:
           - name: post_id
             description: The ID of the post
           - name: post_impressions
-            description: The total amount of impressions on the post
+            description: >
+              The total amount of impressions on the post
+
+              NOTE: This field is deprecated and will not be populated following November, 2025. This field will be removed in a future release.
           - name: post_impressions_fan
-            description: The total amount of impressions on the post by fans
+            description: >
+              The total amount of impressions on the post by fans
+
+              NOTE: This field is deprecated and will not be populated following November, 2025. This field will be removed in a future release.
           - name: post_impressions_nonviral
-            description: The total amount of non-viral impressions on the post
+            description: >
+              The total amount of non-viral impressions on the post
+
+              NOTE: This field is deprecated and will not be populated following November, 2025. This field will be removed in a future release.
           - name: post_impressions_organic
-            description: The total amount of organic impressions on the post
+            description: >
+              The total amount of organic impressions on the post
+
+              NOTE: This field is deprecated and will not be populated following November, 2025. This field will be removed in a future release.
           - name: post_impressions_paid
-            description: The total amount of paid impressions on the post
+            description: >
+              The total amount of paid impressions on the post
+
+              NOTE: This field is deprecated and will not be populated following November, 2025. This field will be removed in a future release.
           - name: post_impressions_viral
-            description: The total amount of viral impressions on the post
+            description: >
+              The total amount of viral impressions on the post
+
+              NOTE: This field is deprecated and will not be populated following November, 2025. This field will be removed in a future release.
           - name: post_negative_feedback
-            description: The total amount of negative feedback on the post
+            description: >
+              The total amount of negative feedback on the post
+
+              NOTE: This field is deprecated and will not be populated following November, 2025. This field will be removed in a future release.
           - name: post_reactions_anger_total
             description: The total amount of reactions with type 'anger' on the post
           - name: post_reactions_haha_total
@@ -343,30 +364,65 @@ sources:
             description: The total amount of reactions on posts from the Page
           - name: page_actions_post_reactions_wow_total
             description: The total amount of reactions with type 'wow' on posts from the Page
+          - name: page_media_view
+            description: The number of times media/content was viewed on the Page
           - name: page_fan_adds
-            description: The number of fans added to the Page.
+            description: >
+              The number of fans added to the Page.
+
+              NOTE: This field is deprecated and will not be populated following November, 2025. This field will be removed in a future release.
           - name: page_fan_removes
-            description: The number of fans removed from the Page.
+            description: >
+              The number of fans removed from the Page.
+
+              NOTE: This field is deprecated and will not be populated following November, 2025. This field will be removed in a future release.
           - name: page_fans
-            description: The number of fans the page has.
+            description: >
+              The number of fans the page has.
+
+              NOTE: This field is deprecated and will not be populated following November, 2025. This field will be removed in a future release.
           - name: page_fans_online_per_day
-            description: The number of fans who are online per day.
+            description: >
+              The number of fans who are online per day.
+
+              NOTE: This field is deprecated and will not be populated following November, 2025.
           - name: page_id
             description: The ID of the Page
           - name: page_impressions
-            description: The number of times any content from your Page or about your Page entered a person's screen.
+            description: >
+              The number of times any content from your Page or about your Page entered a person's screen.
+
+              NOTE: This field is deprecated and will not be populated following November, 2025. This field will be removed in a future release.
           - name: page_impressions_nonviral
-            description: The number of times any content from your Page entered a person's screen. This does not include content created about your Page with social information attached. Social information displays when a person's friend interacted with your Page, post or story. This includes when someone's friend likes or follows your Page, engages with a post, shares a photo of your Page and checks into your Page.
+            description: >
+              The number of times any content from your Page entered a person's screen. This does not include content created about your Page with social information attached. Social information displays when a person's friend interacted with your Page, post or story. This includes when someone's friend likes or follows your Page, engages with a post, shares a photo of your Page and checks into your Page.
+
+              NOTE: This field is deprecated and will not be populated following November, 2025. This field will be removed in a future release.
           - name: page_impressions_organic
-            description: The number of times any post or story content from your Page or about your Page entered a person's screen through unpaid distribution.
+            description: >
+              The number of times any post or story content from your Page or about your Page entered a person's screen through unpaid distribution.
+
+              NOTE: This field is deprecated and will not be populated following November, 2025. This field will be removed in a future release.
           - name: page_impressions_paid
-            description: The number of times any post or story content from your Page or about your Page entered a person's screen through paid distribution such as an ad.
+            description: >
+              The number of times any post or story content from your Page or about your Page entered a person's screen through paid distribution such as an ad.
+
+              NOTE: This field is deprecated and will not be populated following November, 2025. This field will be removed in a future release.
           - name: page_impressions_viral
-            description: The number of times any content from your Page or about your Page entered a person's screen with social information attached. Social information displays when a person's friend interacted with your Page, post or story. This includes when someone's friend likes or follows your Page, engages with a post, shares a photo of your Page and checks into your Page.
+            description: >
+              The number of times any content from your Page or about your Page entered a person's screen with social information attached. Social information displays when a person's friend interacted with your Page, post or story. This includes when someone's friend likes or follows your Page, engages with a post, shares a photo of your Page and checks into your Page.
+
+              NOTE: This field is deprecated and will not be populated following November, 2025. This field will be removed in a future release.
           - name: page_negative_feedback
-            description: The number of times people took a negative action (e.g., un-liked or hid a post).
+            description: >
+              The number of times people took a negative action (e.g., un-liked or hid a post).
+          
+              NOTE: This field is deprecated and will not be populated following November, 2025.
           - name: page_places_checkin_total
-            description: The number of times people checked into a place.
+            description: >
+              The number of times people checked into a place.
+
+              NOTE: This field is deprecated and will not be populated following November, 2025.
           - name: page_post_engagements
             description: The number of times people have engaged with your posts through reactions, comments, shares and more.
           - name: page_posts_impressions
