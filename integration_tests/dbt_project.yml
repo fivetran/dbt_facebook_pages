@@ -37,6 +37,7 @@ seeds:
     facebook_pages_daily_page_metrics_total_data:
       +column_types:
         page_id: "{{ 'int64' if target.type == 'bigquery' else 'bigint' }}"
+        page_media_views: float
 flags:
   send_anonymous_usage_stats: False
   use_colors: True
