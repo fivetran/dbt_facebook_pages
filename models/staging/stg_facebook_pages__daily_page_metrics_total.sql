@@ -37,17 +37,18 @@ final as (
         page_actions_post_reactions_sorry_total as actions_post_reactions_sorry_total,
         page_actions_post_reactions_wow_total as actions_post_reactions_wow_total,
         coalesce(page_actions_post_reactions_total,(page_actions_post_reactions_anger_total + page_actions_post_reactions_haha_total + page_actions_post_reactions_like_total + page_actions_post_reactions_love_total + page_actions_post_reactions_sorry_total + page_actions_post_reactions_wow_total)) as actions_post_reactions_total,
-        page_fan_adds as fan_adds,
-        page_fan_removes as fan_removes,
-        page_fans as fans,
-        page_fans_online_per_day as fans_online_per_day,
-        page_impressions as impressions,
-        page_impressions_nonviral as impressions_nonviral,
-        page_impressions_organic as impressions_organic,
-        page_impressions_paid as impressions_paid,
-        page_impressions_viral as impressions_viral,
-        page_negative_feedback as negative_feedback,
-        page_places_checkin_total as places_checkin_total,
+        page_fan_adds as fan_adds, -- Deprecated as of November, 2025. Will be removed in future release.
+        page_fan_removes as fan_removes, -- Deprecated as of November, 2025. Will be removed in future release.
+        page_fans as fans, -- Deprecated as of November, 2025. Will be removed in future release.
+        page_fans_online_per_day as fans_online_per_day, -- Deprecated as of November, 2025. Will be removed in future release.
+        page_impressions as impressions, -- Deprecated as of November, 2025. Will be removed in future release.
+        page_impressions_nonviral as impressions_nonviral, -- Deprecated as of November, 2025. Will be removed in future release.
+        page_impressions_organic as impressions_organic, -- Deprecated as of November, 2025. Will be removed in future release.
+        page_impressions_paid as impressions_paid, -- Deprecated as of November, 2025. Will be removed in future release.
+        page_impressions_viral as impressions_viral, -- Deprecated as of November, 2025. Will be removed in future release.
+        page_negative_feedback as negative_feedback, -- Deprecated as of November, 2025. Will be removed in future release.
+        page_places_checkin_total as places_checkin_total, -- Deprecated as of November, 2025. Will be removed in future release.
+        page_media_view as media_views,
         page_post_engagements as post_engagements,
         page_posts_impressions as posts_impressions,
         page_posts_impressions_nonviral as posts_impressions_nonviral,

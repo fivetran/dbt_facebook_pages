@@ -25,7 +25,7 @@ with posts as (
         pages.page_name,
         post_metrics.date_day,
         post_metrics.clicks,
-        post_metrics.impressions,
+        post_metrics.impressions, -- Deprecated as of November, 2025. Will be removed in future release.
         post_metrics.video_avg_time_watched,
         post_metrics.video_view_time,
         post_metrics.video_views,

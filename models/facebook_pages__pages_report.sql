@@ -15,9 +15,10 @@ with pages as (
         pages.page_id,
         pages.page_name,
         page_metrics.actions_post_reactions_total,
-        page_metrics.fan_adds,
-        page_metrics.fan_removes,
-        page_metrics.impressions,
+        page_metrics.fan_adds, -- Deprecated as of November, 2025. Will be removed in future release.
+        page_metrics.fan_removes, -- Deprecated as of November, 2025. Will be removed in future release.
+        page_metrics.impressions, -- Deprecated as of November, 2025. Will be removed in future release.
+        page_metrics.media_views,
         page_metrics.post_engagements,
         page_metrics.posts_impressions,
         page_metrics.video_complete_views_30s,

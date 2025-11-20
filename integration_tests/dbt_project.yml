@@ -1,5 +1,5 @@
 name: 'facebook_pages_integration_tests'
-version: '1.0.0'
+version: '1.1.0'
 profile: 'integration_tests'
 config-version: 2
 
@@ -9,7 +9,11 @@ vars:
     facebook_pages_lifetime_post_metrics_total_identifier: "facebook_pages_lifetime_post_metrics_total_data"
     facebook_pages_page_identifier: "facebook_pages_page_data"
     facebook_pages_post_history_identifier: "facebook_pages_post_history_data"
-    facebook_pages_schema: facebook_pages_integrations_tests_1
+    facebook_pages_schema: facebook_pages_integrations_tests
+
+models:
+  facebook_pages:
+    +schema: "facebook_pages_{{ var('directed_schema','dev') }}"
 
 dispatch:
   - macro_namespace: dbt_utils
@@ -33,6 +37,7 @@ seeds:
     facebook_pages_daily_page_metrics_total_data:
       +column_types:
         page_id: "{{ 'int64' if target.type == 'bigquery' else 'bigint' }}"
+        page_media_views: float
 flags:
   send_anonymous_usage_stats: False
   use_colors: True
