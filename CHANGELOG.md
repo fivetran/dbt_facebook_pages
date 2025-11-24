@@ -1,3 +1,12 @@
+# dbt_facebook_pages v1.1.1
+
+## Schema/Data Change
+**1 total change • 0 possible breaking changes**
+
+| Data Model(s) | Change type | Old | New | Notes |
+| ---------- | ----------- | -------- | -------- | ----- |
+| `facebook_pages__posts_report`, `stg_facebook_pages__lifetime_post_metrics_total` | New Field | N/A | `media_views` | Added new field to track media/content views on the post |
+
 # dbt_facebook_pages v1.1.0
 
 [PR #22](https://github.com/fivetran/dbt_facebook_pages/pull/22) includes the following updates:
