@@ -27,6 +27,8 @@ models:
           The number of times the post was shown to users.
 
           NOTE: This field is deprecated and will not be populated following November, 2025.
+      - name: media_views
+        description: The number of times media/content was viewed on the Post
       - name: video_avg_time_watched
         description: The average amount of time users watched the video.
       - name: video_view_time

@@ -248,6 +248,8 @@ sources:
             description: The total amount of engaged users on the post
           - name: post_id
             description: The ID of the post
+          - name: post_media_view
+            description: The number of times media/content was viewed on the Post
           - name: post_impressions
             description: >
               The total amount of impressions on the post

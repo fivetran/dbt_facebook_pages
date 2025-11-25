@@ -157,6 +157,8 @@ models:
         description: The ID of the post
         tests:
           - not_null
+      - name: media_views
+        description: The number of times media/content was viewed on the Post
       - name: impressions
         description: >
           The total amount of impressions on the post
