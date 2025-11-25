@@ -3,7 +3,7 @@
 [PR #25](https://github.com/fivetran/dbt_facebook_pages/pull/25) includes the following updates:
 
 ## Schema/Data Change
-**1 total change • 0 possible breaking changes**
+**2 total change • 0 possible breaking changes**
 
 | Data Model(s) | Change type | Old | New | Notes |
 | ---------- | ----------- | -------- | -------- | ----- |
