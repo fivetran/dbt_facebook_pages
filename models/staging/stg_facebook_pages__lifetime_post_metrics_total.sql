@@ -38,6 +38,7 @@ final as (
         post_impressions_paid as impressions_paid, -- Deprecated as of November, 2025. Will be removed in future release.
         post_impressions_viral as impressions_viral, -- Deprecated as of November, 2025. Will be removed in future release.
         post_negative_feedback as negative_feedback, -- Deprecated as of November, 2025. Will be removed in future release.
+        post_media_view as media_views,
         post_reactions_anger_total as reactions_anger_total,
         post_reactions_haha_total as reactions_haha_total,
         post_reactions_like_total as reactions_like_total,

@@ -42,7 +42,8 @@
     {"name": "post_video_views_clicked_to_play", "datatype": dbt.type_int()},
     {"name": "post_video_views_organic", "datatype": dbt.type_int()},
     {"name": "post_video_views_paid", "datatype": dbt.type_int()},
-    {"name": "post_video_views_sound_on", "datatype": dbt.type_int()}
+    {"name": "post_video_views_sound_on", "datatype": dbt.type_int()},
+    {"name": "post_media_view", "datatype": dbt.type_float()}
 ] %}
 
 {{ return(columns) }}
