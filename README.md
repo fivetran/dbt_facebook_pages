@@ -48,8 +48,8 @@ By default, this package materializes the following final tables:
 
 | Table | Description |
 | :---- | :---- |
-| [facebook_pages__pages_report](https://github.com/fivetran/dbt_facebook_pages/blob/main/models/facebook_pages__pages_report.sql) | Tracks daily performance metrics for your Facebook Pages to measure audience growth, engagement, and reach across your brand presence. <br></br>**Example Analytics Questions:**<ul><li>How are follower additions and removals trending over time for each page?</li><li>Which pages generate the highest post engagement and views?</li><li>What is the video view completion rate (30s views vs total views) by page?</li></ul>|
-| [facebook_pages__posts_report](https://github.com/fivetran/dbt_facebook_pages/blob/main/models/facebook_pages__posts_report.sql) | Analyzes daily performance for individual Facebook posts to understand which content resonates most with your audience through likes, comments, shares, and reach metrics. <br></br>**Example Analytics Questions:**<ul><li>Which posts generate the highest click-through rates and views?</li><li>How do video posts perform in terms of average watch time and 10-second view rates?</li><li>What types of post messages or content drive the most likes and engagement?</li></ul>|
+| [facebook_pages__pages_report](https://fivetran.github.io/dbt_facebook_pages/#!/model/model.facebook_pages.facebook_pages__pages_report) | Tracks daily performance metrics for your Facebook Pages to measure audience growth, engagement, and reach across your brand presence. <br></br>**Example Analytics Questions:**<ul><li>How are follower additions and removals trending over time for each page?</li><li>Which pages generate the highest post engagement and views?</li><li>What is the video view completion rate (30-second views vs total views) by page?</li></ul>|
+| [facebook_pages__posts_report](https://fivetran.github.io/dbt_facebook_pages/#!/model/model.facebook_pages.facebook_pages__posts_report) | Analyzes daily performance for individual Facebook posts to understand which content resonates most with your audience through likes, comments, shares, and reach metrics. <br></br>**Example Analytics Questions:**<ul><li>Which posts generate the highest click-through rates and views?</li><li>How do video posts perform in terms of average watch time and 10-second view rates?</li><li>What types of post messages or content drive the most likes and engagement?</li></ul>|
 
 ¹ Each Quickstart transformation job run materializes these models if all components of this data model are enabled. This count includes all staging, intermediate, and final models materialized as `view`, `table`, or `incremental`.
 
@@ -74,7 +74,7 @@ Include the following Facebook Pages package version in your `packages.yml`
 ```yaml
 packages:
   - package: fivetran/facebook_pages
-    version: [">=1.3.0", "<1.4.0"] # we recommend using ranges to capture non-breaking changes automatically
+    version: [">=1.2.0", "<1.3.0"] # we recommend using ranges to capture non-breaking changes automatically
 ```
 
 > All required sources and staging models are now bundled into this transformation package. Do not include `fivetran/facebook_pages_source` in your `packages.yml` since this package has been deprecated.
