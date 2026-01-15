@@ -1,3 +1,9 @@
+# dbt_facebook_pages v1.3.0
+[PR #28](https://github.com/fivetran/dbt_facebook_pages/pull/28) includes the following update:
+
+## Documentation
+- Updates README with standardized Fivetran formatting.
+
 # dbt_facebook_pages v1.2.0
 [PR #26](https://github.com/fivetran/dbt_facebook_pages/pull/26) includes the following updates:
 
