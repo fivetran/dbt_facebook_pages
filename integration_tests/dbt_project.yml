@@ -12,6 +12,9 @@ vars:
     facebook_pages_schema: facebook_pages_integrations_tests
 
 models:
+  +persist_docs:
+    relation: true
+    columns: true
   facebook_pages:
     +schema: "facebook_pages_{{ var('directed_schema','dev') }}"
 
