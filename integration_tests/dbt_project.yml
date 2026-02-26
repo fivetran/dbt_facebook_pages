@@ -14,7 +14,7 @@ vars:
 models:
   +persist_docs:
     relation: true
-    columns: true
+    columns: "{{ false if target.type in ('databricks') else true }}"
   facebook_pages:
     +schema: "facebook_pages_{{ var('directed_schema','dev') }}"
 
