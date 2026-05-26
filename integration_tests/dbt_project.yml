@@ -29,8 +29,8 @@ seeds:
     facebook_pages_post_history_data:
       +column_types:
         id: "{{ 'string' if target.type in ['bigquery', 'spark', 'databricks'] else 'varchar' }}"
-        promotable_id: "{{ 'string' if target.type in ['bigquery', 'spark', 'databricks'] else 'varchar' }}"
         page_id: "{{ 'int64' if target.type == 'bigquery' else 'bigint' }}"
+        promotable_id: "{{ 'string' if target.type in ['bigquery', 'spark', 'databricks'] else 'varchar' }}"
     facebook_pages_lifetime_post_metrics_total_data:
       +column_types:
         post_id: "{{ 'string' if target.type in ['bigquery', 'spark', 'databricks'] else 'varchar' }}"
