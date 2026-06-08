@@ -1,4 +1,3 @@
-
 with base as (
 
     select * 
@@ -16,10 +15,7 @@ fields as (
             )
         }}
                 
-        {{ fivetran_utils.source_relation(
-            union_schema_variable='facebook_pages_union_schemas', 
-            union_database_variable='facebook_pages_union_databases') 
-        }}
+        {{ fivetran_utils.apply_source_relation(package_name='facebook_pages') }}
         
     from base
 ),
@@ -76,7 +72,7 @@ is_most_recent as (
 
     select 
         *,
-        row_number() over (partition by post_id, source_relation order by date_day desc) = 1 as is_most_recent_record
+        row_number() over (partition by post_id {{ fivetran_utils.partition_by_source_relation(package_name='facebook_pages') }} order by date_day desc) = 1 as is_most_recent_record
     from final
 
 )
