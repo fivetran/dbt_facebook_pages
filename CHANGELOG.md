@@ -1,6 +1,6 @@
 # dbt_facebook_pages v1.3.0
 
-[PR #27](https://github.com/fivetran/dbt_facebook_pages/pull/27) includes the following updates:
+[PR #32](https://github.com/fivetran/dbt_facebook_pages/pull/32) includes the following updates:
 
 ## Schema/Data Changes (--full-refresh required after upgrading)
 **1 total change • 1 possible breaking change**
