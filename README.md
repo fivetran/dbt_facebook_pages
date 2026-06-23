@@ -63,7 +63,7 @@ Include the following Facebook Pages package version in your `packages.yml`
 ```yaml
 packages:
   - package: fivetran/facebook_pages
-    version: [">=1.2.0", "<1.3.0"] # we recommend using ranges to capture non-breaking changes automatically
+    version: [">=1.3.0", "<1.4.0"] # we recommend using ranges to capture non-breaking changes automatically
 ```
 
 > All required sources and staging models are now bundled into this transformation package. Do not include `fivetran/facebook_pages_source` in your `packages.yml` since this package has been deprecated.
@@ -77,14 +77,42 @@ dispatch:
 ```
 
 ### Configure Your Variables
-#### Database and Schema Variables
-By default, this package will look for your Facebook Pages data in the `facebook_pages` schema of your [target database](https://docs.getdbt.com/docs/running-a-dbt-project/using-the-command-line-interface/configure-your-profile). If this is not where your Facebook Pages data is, add the following configuration to your `dbt_project.yml` file:
+
+### Define database and schema variables
+#### Option A: Single connection
+By default, this package runs using your destination and the `facebook_pages` schema. If this is not where your Facebook Pages data is (for example, if your Facebook Pages schema is named `facebook_pages_fivetran`), add the following configuration to your root `dbt_project.yml` file:
 
 ```yml
 vars:
+    facebook_pages_database: your_destination_name
     facebook_pages_schema: your_schema_name
-    facebook_pages_database: your_database_name 
 ```
+
+#### Option B: Union multiple connections
+If you have multiple Facebook Pages connections in Fivetran and would like to use this package on all of them simultaneously, we have provided functionality to do so. For each source table, the package will union all of the data together and pass the unioned table into the transformations. The `source_relation` column in each model indicates the origin of each record.
+
+To use this functionality, you will need to set the `facebook_pages_sources` variable in your root `dbt_project.yml` file:
+
+```yml
+# dbt_project.yml
+
+vars:
+  facebook_pages:
+    facebook_pages_sources:
+      - database: connection_1_destination_name # Required
+        schema: connection_1_schema_name # Required
+        name: connection_1_source_name # Required only if following the step in the following subsection
+
+      - database: connection_2_destination_name
+        schema: connection_2_schema_name
+        name: connection_2_source_name
+```
+
+> Previous versions of this package employed two separate, mutually exclusive variables for unioning: `facebook_pages_union_schemas` and `facebook_pages_union_databases`. While these variables are still supported, `facebook_pages_sources` is the recommended variable to configure.
+
+#### Optional: Incorporate unioned sources into DAG
+
+If you use [Fivetran Transformations for dbt Core™](https://fivetran.com/docs/transformations/dbt#transformationsfordbtcore) and are unioning multiple Facebook Pages connections, you can define your sources in a property `.yml` file, [using this as a template](https://github.com/fivetran/dbt_facebook_pages/blob/main/models/staging/src_facebook_pages.yml). Set the variable `has_defined_sources: true` under the Facebook Pages namespace in your `dbt_project.yml`. Otherwise, your Facebook Pages connections won't appear in your DAG. See the `union_connections` macro [documentation](https://github.com/fivetran/dbt_fivetran_utils/tree/releases/v0.4.latest#optional-union-connections-defined-sources-configuration) for full configuration details.
 
 ### (Optional) Additional Configurations
 <details><summary>Expand for configurations</summary>
@@ -110,19 +138,12 @@ vars:
     facebook_pages_<default_source_table_name>_identifier: your_table_name 
 ```
 
-#### Unioning Multiple Facebook Pages Connections
-If you have multiple Facebook Pages connections in Fivetran and would like to use this package on all of them simultaneously, we have provided functionality to do so. The package will union all of the data together and pass the unioned table(s) into the final models. You will be able to see which source it came from in the `source_relation` column(s) of each model. To use this functionality, you will need to set either (**note that you cannot use both**) the `union_schemas` or `union_databases` variables:
+#### Source casing for case-sensitive destinations
+By default, the package applies case-insensitive comparisons when resolving `source_relation` values. If your destination is case-sensitive and you want downstream transformations to respect the exact casing of your source database and schema names, set the following variable:
 
 ```yml
-# dbt_project.yml
-...
-config-version: 2
 vars:
-    ##You may set EITHER the schemas variables below
-    facebook_pages_union_schemas: ['facebook_pages_one','facebook_pages_two']
-
-    ##Or may set EITHER the databases variables below
-    facebook_pages_union_databases: ['facebook_pages_one','facebook_pages_two']
+    fivetran_using_source_casing: true
 ```
 </details>
 
