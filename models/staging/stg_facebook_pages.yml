@@ -3,6 +3,13 @@ version: 2
 models:
   - name: stg_facebook_pages__daily_page_metrics_total
     description: Each record reporesents the lifetime post metrics for a Page as of a date.
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - source_relation
+              - page_id
+              - date_day
     columns:
       - name: _fivetran_synced
         description: The timestamp of when the data was last synced with Fivetran
@@ -144,6 +151,13 @@ models:
 
   - name: stg_facebook_pages__lifetime_post_metrics_total
     description: Each record represents the lifetime post metrics for a Page as of a date.
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - source_relation
+              - post_id
+              - date_day
     columns:
       - name: _fivetran_synced
         description: The timestamp of when the data was last synced with Fivetran
@@ -259,6 +273,12 @@ models:
 
   - name: stg_facebook_pages__page
     description: Each record represents a Facebook page.
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - source_relation
+              - page_id
     columns:
       - name: _fivetran_deleted
         description: Whether the record has been deleted
@@ -439,6 +459,13 @@ models:
 
   - name: stg_facebook_pages__post_history
     description:  Each record represents a version of a post in Facebook.
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - source_relation
+              - post_id
+              - updated_timestamp
     columns:
       - name: _fivetran_synced
         description: The timestamp of when the data was last synced by Fivetran

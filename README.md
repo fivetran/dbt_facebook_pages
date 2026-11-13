@@ -15,7 +15,7 @@ This dbt package transforms data from Fivetran's Facebook Pages connector into a
   - [DAG](https://fivetran.github.io/dbt_facebook_pages/#!/overview?g_v=1)
   - [Changelog](https://github.com/fivetran/dbt_facebook_pages/blob/main/CHANGELOG.md)
 - dbt Core™ supported versions
-  - `>=1.3.0, <3.0.0`
+  - `>=1.10.0, <3.0.0`
 
 ## What does this dbt package do?
 This package enables you to transform core social media object tables into analytics-ready models and generate comprehensive data dictionaries. It creates enriched models with metrics focused on daily page performance and post performance.
@@ -63,7 +63,7 @@ Include the following Facebook Pages package version in your `packages.yml`
 ```yaml
 packages:
   - package: fivetran/facebook_pages
-    version: [">=1.3.0", "<1.4.0"] # we recommend using ranges to capture non-breaking changes automatically
+    version: [">=1.4.0", "<1.5.0"] # we recommend using ranges to capture non-breaking changes automatically
 ```
 
 > All required sources and staging models are now bundled into this transformation package. Do not include `fivetran/facebook_pages_source` in your `packages.yml` since this package has been deprecated.
@@ -179,7 +179,7 @@ The Fivetran team maintaining this package only maintains the [latest version](h
 ### Contributions
 A small team of analytics engineers at Fivetran develops these dbt packages. However, the packages are made better by community contributions.
 
-We highly encourage and welcome contributions to this package. Learn how to contribute to a package in dbt's [Contributing to an external dbt package article](https://discourse.getdbt.com/t/contributing-to-a-dbt-package/657).
+We highly encourage and welcome contributions to this package. Learn how to contribute to a package by reading the guidelines in our [CONTRIBUTING.md](https://github.com/fivetran/dbt_facebook_pages/blob/main/CONTRIBUTING.md) document.
 
 <!--section-end-->
 
