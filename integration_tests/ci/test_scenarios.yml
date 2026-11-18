@@ -26,3 +26,10 @@ test_scenarios:
       fivetran_using_source_casing: true
     include_incremental: false
     include_dbt_seed: true
+
+  - name: "Disable media view breakdown tables"
+    vars:
+      facebook_pages__using_lifetime_post_metrics_by_paid_organic: false
+      facebook_pages__using_lifetime_post_metrics_by_followers: false
+      facebook_pages__using_daily_page_metrics_by_paid_organic: false
+    include_incremental: false

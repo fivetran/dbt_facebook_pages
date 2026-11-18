@@ -5,7 +5,7 @@ This dbt package transforms data from Fivetran's Facebook Pages connector into a
 
 ## Resources
 
-- Number of materialized models¹: 11
+- Number of materialized models¹: 20
 - Connector documentation
   - [Facebook Pages connector documentation](https://fivetran.com/docs/connectors/applications/facebook-pages)
   - [Facebook Pages ERD](https://fivetran.com/docs/connectors/applications/facebook-pages#schemainformation)
@@ -113,6 +113,18 @@ vars:
 #### Optional: Incorporate unioned sources into DAG
 
 If you use [Fivetran Transformations for dbt Core™](https://fivetran.com/docs/transformations/dbt#transformationsfordbtcore) and are unioning multiple Facebook Pages connections, you can define your sources in a property `.yml` file, [using this as a template](https://github.com/fivetran/dbt_facebook_pages/blob/main/models/staging/src_facebook_pages.yml). Set the variable `has_defined_sources: true` under the Facebook Pages namespace in your `dbt_project.yml`. Otherwise, your Facebook Pages connections won't appear in your DAG. See the `union_connections` macro [documentation](https://github.com/fivetran/dbt_fivetran_utils/tree/releases/v0.4.latest#optional-union-connections-defined-sources-configuration) for full configuration details.
+
+### Disable models for non-existent sources
+Your Facebook Pages connection may not sync the `lifetime_post_metrics_by_paid_organic`, `lifetime_post_metrics_by_followers`, or `daily_page_metrics_by_paid_organic` tables. Fivetran added these tables in December 2025 to replace the impressions metrics that Facebook deprecated. They feed the `media_views_paid`, `media_views_organic`, `media_views_followers`, and `media_views_non_followers` fields in the end models.
+
+By default, these variables are `true`. If you don't sync a table, set its variable to `false` in your `dbt_project.yml`. The media view fields then fall back to the deprecated impressions fields. If you run the package through Fivetran Quickstart, we set these variables for you.
+
+```yml
+vars:
+    facebook_pages__using_lifetime_post_metrics_by_paid_organic: false # Disable if you don't sync lifetime_post_metrics_by_paid_organic
+    facebook_pages__using_lifetime_post_metrics_by_followers: false # Disable if you don't sync lifetime_post_metrics_by_followers
+    facebook_pages__using_daily_page_metrics_by_paid_organic: false # Disable if you don't sync daily_page_metrics_by_paid_organic
+```
 
 ### (Optional) Additional Configurations
 <details><summary>Expand for configurations</summary>
