@@ -48,22 +48,16 @@ seeds:
         page_media_view: float
     facebook_pages_lifetime_post_metrics_by_paid_organic_data:
       +column_types:
-        date: timestamp
-        _fivetran_synced: timestamp
         post_id: "{{ 'string' if target.type in ['bigquery', 'spark', 'databricks'] else 'varchar' }}"
         is_from_ads: boolean
         post_media_view: integer
     facebook_pages_lifetime_post_metrics_by_followers_data:
       +column_types:
-        date: timestamp
-        _fivetran_synced: timestamp
         post_id: "{{ 'string' if target.type in ['bigquery', 'spark', 'databricks'] else 'varchar' }}"
         is_from_followers: boolean
         post_media_view: integer
     facebook_pages_daily_page_metrics_by_paid_organic_data:
       +column_types:
-        date: timestamp
-        _fivetran_synced: timestamp
         page_id: "{{ 'int64' if target.type == 'bigquery' else 'bigint' }}"
         is_from_ads: boolean
         page_media_view: integer
