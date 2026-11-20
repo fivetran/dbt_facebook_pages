@@ -25,7 +25,7 @@ models:
         description: The name of the page that posted the post.
       - name: date_day
         description: The date of the metric performance.
-        tests: 
+        data_tests: 
           - not_null
       - name: clicks
         description: The number of times the post was clicked.
@@ -65,13 +65,13 @@ models:
     columns:
       - name: page_id
         description: The ID of the Page.
-        tests:
+        data_tests:
           - not_null
       - name: page_name
         description: The name of the Page.
       - name: date_day
         description: The date of the metric performance.
-        tests:
+        data_tests:
           - not_null
       - name: actions_post_reactions_total
         description: The total number of reactions on posts.
