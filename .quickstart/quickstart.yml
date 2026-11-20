@@ -3,6 +3,14 @@ schema_key: facebook_pages_schema
 
 dbt_versions: ">=1.10.0 <3.0.0"
 
+table_variables:
+  facebook_pages__using_lifetime_post_metrics_by_paid_organic:
+    - lifetime_post_metrics_by_paid_organic
+  facebook_pages__using_lifetime_post_metrics_by_followers:
+    - lifetime_post_metrics_by_followers
+  facebook_pages__using_daily_page_metrics_by_paid_organic:
+    - daily_page_metrics_by_paid_organic
+
 destination_configurations:
   databricks:
     dispatch:
