@@ -5,7 +5,7 @@ This dbt package transforms data from Fivetran's Facebook Pages connector into a
 
 ## Resources
 
-- Number of materialized models¹: 20
+- Number of materialized models¹: 17
 - Connector documentation
   - [Facebook Pages connector documentation](https://fivetran.com/docs/connectors/applications/facebook-pages)
   - [Facebook Pages ERD](https://fivetran.com/docs/connectors/applications/facebook-pages#schemainformation)

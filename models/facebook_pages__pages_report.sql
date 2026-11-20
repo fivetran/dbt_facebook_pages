@@ -11,8 +11,14 @@ with pages as (
 {% if var('facebook_pages__using_daily_page_metrics_by_paid_organic', True) %}
 ), paid_organic_metrics as (
 
-    select *
-    from {{ ref('int_facebook_pages__page_media_views_by_paid_organic') }}
+    select
+        source_relation,
+        page_id,
+        date_day,
+        sum(case when is_from_ads then media_views end) as media_views_paid,
+        sum(case when not is_from_ads then media_views end) as media_views_organic
+    from {{ ref('stg_facebook_pages__daily_page_metrics_by_paid_organic') }}
+    group by 1, 2, 3
 
 {% endif %}
 ), joined as (

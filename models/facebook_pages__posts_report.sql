@@ -17,15 +17,27 @@ with posts as (
 {% if var('facebook_pages__using_lifetime_post_metrics_by_paid_organic', True) %}
 ), paid_organic_metrics as (
 
-    select *
-    from {{ ref('int_facebook_pages__post_media_views_by_paid_organic') }}
+    select
+        source_relation,
+        post_id,
+        date_day,
+        sum(case when is_from_ads then media_views end) as media_views_paid,
+        sum(case when not is_from_ads then media_views end) as media_views_organic
+    from {{ ref('stg_facebook_pages__lifetime_post_metrics_by_paid_organic') }}
+    group by 1, 2, 3
 
 {% endif %}
 {% if var('facebook_pages__using_lifetime_post_metrics_by_followers', True) %}
 ), follower_metrics as (
 
-    select *
-    from {{ ref('int_facebook_pages__post_media_views_by_followers') }}
+    select
+        source_relation,
+        post_id,
+        date_day,
+        sum(case when is_from_followers then media_views end) as media_views_followers,
+        sum(case when not is_from_followers then media_views end) as media_views_non_followers
+    from {{ ref('stg_facebook_pages__lifetime_post_metrics_by_followers') }}
+    group by 1, 2, 3
 
 {% endif %}
 ), joined as (
