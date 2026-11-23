@@ -15,7 +15,7 @@ models:
         description: The timestamp of when the data was last synced with Fivetran
       - name: date_day
         description: The date of the metric
-        tests:
+        data_tests:
           - not_null
       - name: actions_post_reactions_anger_total
         description: The total amount of reactions with type 'anger' on posts from the Page
@@ -53,7 +53,7 @@ models:
           NOTE: This field is deprecated and will not be populated following November, 2025.
       - name: page_id
         description: The ID of the Page
-        tests:
+        data_tests:
           - not_null
       - name: media_views
         description: The number of times media/content was viewed on the Page
@@ -163,13 +163,13 @@ models:
         description: The timestamp of when the data was last synced with Fivetran
       - name: date_day
         description: The date of the metric
-        tests:  
+        data_tests:  
           - not_null
       - name: clicks
         description: The total amount of clicks on the post
       - name: post_id
         description: The ID of the post
-        tests:
+        data_tests:
           - not_null
       - name: media_views
         description: The number of times media/content was viewed on the Post
@@ -356,7 +356,7 @@ models:
         description: Hometown of the band. Applicable to Bands
       - name: page_id
         description: The ID of the Page.
-        tests: 
+        data_tests: 
           - not_null
       - name: impressum
         description: Legal information about the Page publishers.
@@ -475,7 +475,7 @@ models:
         description: The time the post was initially published. For a post about a life event, this is the date and time of the life event.
       - name: post_id
         description: The ID of the post.
-        tests:
+        data_tests:
           - not_null
       - name: is_eligible_for_promotion
         description: Whether this post is eligible to be promoted on Facebook.
@@ -531,11 +531,11 @@ models:
         description: The timestamp of when the data was last synced with Fivetran
       - name: date_day
         description: The date of the metric
-        tests:
+        data_tests:
           - not_null
       - name: post_id
         description: The ID of the post
-        tests:
+        data_tests:
           - not_null
       - name: is_from_ads
         description: "{{ doc('is_from_ads') }}"
@@ -559,11 +559,11 @@ models:
         description: The timestamp of when the data was last synced with Fivetran
       - name: date_day
         description: The date of the metric
-        tests:
+        data_tests:
           - not_null
       - name: post_id
         description: The ID of the post
-        tests:
+        data_tests:
           - not_null
       - name: is_from_followers
         description: "{{ doc('is_from_followers') }}"
@@ -587,11 +587,11 @@ models:
         description: The timestamp of when the data was last synced with Fivetran
       - name: date_day
         description: The date of the metric
-        tests:
+        data_tests:
           - not_null
       - name: page_id
         description: The ID of the Page
-        tests:
+        data_tests:
           - not_null
       - name: is_from_ads
         description: "{{ doc('is_from_ads') }}"

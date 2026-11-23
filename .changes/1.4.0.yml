@@ -44,7 +44,8 @@ schema_data_changes:
     notes: Keeps a continuous view metric across records from before and after the
       November 2025 deprecation.
 new_features:
-- description: Raises the minimum dbt version to 1.10.0.
+- title: Breaking change
+  description: Raises the minimum dbt version to 1.10.0.
 - description: Adds `dbt_utils.unique_combination_of_columns` tests to staging and
     end models. If a test fails, please [open an issue](https://github.com/fivetran/dbt_facebook_pages/issues/new/choose).
 - title: Media view breakdown variables

@@ -18,7 +18,7 @@
 [PR #36](https://github.com/fivetran/dbt_facebook_pages/pull/36) includes the following updates:
 
 ## Feature Update
-- Raises the minimum dbt version to 1.10.0.
+- **Breaking change**: Raises the minimum dbt version to 1.10.0.
 - Adds `dbt_utils.unique_combination_of_columns` tests to staging and end models. If a test fails, please [open an issue](https://github.com/fivetran/dbt_facebook_pages/issues/new/choose).
 
 # dbt_facebook_pages v1.3.1
