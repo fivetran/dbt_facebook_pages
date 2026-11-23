@@ -2,12 +2,12 @@ version: 1.4.0
 schema_data_changes:
   entries:
   - models:
-    - stg_facebook_pages__lifetime_post_metrics_by_paid_organic
-    - stg_facebook_pages__lifetime_post_metrics_by_followers
-    - stg_facebook_pages__daily_page_metrics_by_paid_organic
-    - stg_facebook_pages__lifetime_post_metrics_by_paid_organic_tmp
-    - stg_facebook_pages__lifetime_post_metrics_by_followers_tmp
-    - stg_facebook_pages__daily_page_metrics_by_paid_organic_tmp
+    - '`stg_facebook_pages__lifetime_post_metrics_by_paid_organic`'
+    - '`stg_facebook_pages__lifetime_post_metrics_by_followers`'
+    - '`stg_facebook_pages__daily_page_metrics_by_paid_organic`'
+    - '`stg_facebook_pages__lifetime_post_metrics_by_paid_organic_tmp`'
+    - '`stg_facebook_pages__lifetime_post_metrics_by_followers_tmp`'
+    - '`stg_facebook_pages__daily_page_metrics_by_paid_organic_tmp`'
     change_type: New field/model
     is_breaking: false
     notes: Stages the `lifetime_post_metrics_by_paid_organic`, `lifetime_post_metrics_by_followers`,
@@ -15,7 +15,7 @@ schema_data_changes:
       in December 2025 to replace the impressions metrics Facebook deprecated on November
       15, 2025.
   - models:
-    - facebook_pages__posts_report
+    - '`facebook_pages__posts_report`'
     change_type: New field/model
     new: '`media_views_paid`, `media_views_organic`, `media_views_followers`, `media_views_non_followers`'
     is_breaking: false
@@ -25,7 +25,7 @@ schema_data_changes:
       `media_views_non_followers` has no fallback and is only present when `facebook_pages__using_lifetime_post_metrics_by_followers`
       is true.
   - models:
-    - facebook_pages__pages_report
+    - '`facebook_pages__pages_report`'
     change_type: New field/model
     new: '`media_views_paid`, `media_views_organic`'
     is_breaking: false
@@ -33,8 +33,8 @@ schema_data_changes:
       back to the deprecated `impressions_paid` and `impressions_organic` fields to
       keep historical values.
   - models:
-    - facebook_pages__posts_report
-    - facebook_pages__pages_report
+    - '`facebook_pages__posts_report`'
+    - '`facebook_pages__pages_report`'
     change_type: Changed field/model
     old: '`media_views` sourced only from the `post_media_view` or `page_media_view`
       field.'
