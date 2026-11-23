@@ -1,10 +1,21 @@
 # dbt_facebook_pages v1.4.0
 
-[PR #36](https://github.com/fivetran/dbt_facebook_pages/pull/36) includes the following updates:
+[PR #36](https://github.com/fivetran/dbt_facebook_pages/pull/36) and [PR #37](https://github.com/fivetran/dbt_facebook_pages/pull/37) include the following updates:
+
+## Schema/Data Change
+**4 total changes • 0 possible breaking changes**
+
+| Data Model(s) | Change type | Old | New | Notes |
+| ------------- | ----------- | --- | --- | ----- |
+| `stg_facebook_pages__lifetime_post_metrics_by_paid_organic`<br>`stg_facebook_pages__lifetime_post_metrics_by_followers`<br>`stg_facebook_pages__daily_page_metrics_by_paid_organic`<br>`stg_facebook_pages__lifetime_post_metrics_by_paid_organic_tmp`<br>`stg_facebook_pages__lifetime_post_metrics_by_followers_tmp`<br>`stg_facebook_pages__daily_page_metrics_by_paid_organic_tmp` | New field/model |  |  | Stages the `lifetime_post_metrics_by_paid_organic`, `lifetime_post_metrics_by_followers`, and `daily_page_metrics_by_paid_organic` source tables, which Fivetran added in December 2025 to replace the impressions metrics Facebook deprecated on November 15, 2025. |
+| `facebook_pages__posts_report` | New field/model |  | `media_views_paid`, `media_views_organic`, `media_views_followers`, `media_views_non_followers` | Sourced from the new post media view tables. `media_views_paid`, `media_views_organic`, and `media_views_followers` fall back to the deprecated `impressions_paid`, `impressions_organic`, and `impressions_fan` fields to keep historical values. `media_views_non_followers` has no fallback and is only present when `facebook_pages__using_lifetime_post_metrics_by_followers` is true. |
+| `facebook_pages__pages_report` | New field/model |  | `media_views_paid`, `media_views_organic` | Sourced from the new `daily_page_metrics_by_paid_organic` table. Falls back to the deprecated `impressions_paid` and `impressions_organic` fields to keep historical values. |
+| `facebook_pages__posts_report`<br>`facebook_pages__pages_report` | Changed field/model | `media_views` sourced only from the `post_media_view` or `page_media_view` field. | `media_views` falls back to the deprecated `impressions` field when media views are not available. | Keeps a continuous view metric across records from before and after the November 2025 deprecation. |
 
 ## Feature Update
 - **Breaking change**: Raises the minimum dbt version to 1.10.0.
 - Adds `dbt_utils.unique_combination_of_columns` tests to staging and end models. If a test fails, please [open an issue](https://github.com/fivetran/dbt_facebook_pages/issues/new/choose).
+- **Media view breakdown variables**: Adds the `facebook_pages__using_lifetime_post_metrics_by_paid_organic`, `facebook_pages__using_lifetime_post_metrics_by_followers`, and `facebook_pages__using_daily_page_metrics_by_paid_organic` variables. Each defaults to `true`. Set a variable to `false` if your connection doesn't sync that table.
 
 # dbt_facebook_pages v1.3.1
 
