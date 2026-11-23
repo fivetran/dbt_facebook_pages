@@ -1,4 +1,5 @@
 version: 1.4.0
+pr_number: [36, 37]
 schema_data_changes:
   entries:
   - models:

@@ -7,7 +7,7 @@ on:
 jobs:
   generate-docs:
     if: github.event.label.name == 'docs:ready'
-    uses: fivetran/dbt_package_automations/.github/workflows/generate-docs.yml@main
+    uses: fivetran/dbt_package_automations/.github/workflows/generate-docs.yml@feature/rerender-updated-current-release
     secrets: inherit
     with:
       schema_var_name: facebook_pages_schema
