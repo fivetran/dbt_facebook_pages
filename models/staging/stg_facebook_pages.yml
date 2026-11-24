@@ -513,3 +513,87 @@ models:
         description: The source of the record, if the unioning functionality is being used.
       - name: post_url
         description: The URL of the post.
+
+  - name: stg_facebook_pages__lifetime_post_metrics_by_paid_organic
+    description: Each record represents the lifetime media views of a post as of a date, split by paid and organic.
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - source_relation
+              - post_id
+              - date_day
+              - is_from_ads
+    columns:
+      - name: source_relation
+        description: The source of the record, if the unioning functionality is being used.
+      - name: _fivetran_synced
+        description: The timestamp of when the data was last synced with Fivetran
+      - name: date_day
+        description: The date of the metric
+        data_tests:
+          - not_null
+      - name: post_id
+        description: The ID of the post
+        data_tests:
+          - not_null
+      - name: is_from_ads
+        description: "{{ doc('is_from_ads') }}"
+      - name: media_views
+        description: The number of times media/content was viewed on the post for this paid or organic split
+
+  - name: stg_facebook_pages__lifetime_post_metrics_by_followers
+    description: Each record represents the lifetime media views of a post as of a date, split by followers and non-followers.
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - source_relation
+              - post_id
+              - date_day
+              - is_from_followers
+    columns:
+      - name: source_relation
+        description: The source of the record, if the unioning functionality is being used.
+      - name: _fivetran_synced
+        description: The timestamp of when the data was last synced with Fivetran
+      - name: date_day
+        description: The date of the metric
+        data_tests:
+          - not_null
+      - name: post_id
+        description: The ID of the post
+        data_tests:
+          - not_null
+      - name: is_from_followers
+        description: "{{ doc('is_from_followers') }}"
+      - name: media_views
+        description: The number of times media/content was viewed on the post for this follower split
+
+  - name: stg_facebook_pages__daily_page_metrics_by_paid_organic
+    description: Each record represents the daily media views of a Page, split by paid and organic.
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - source_relation
+              - page_id
+              - date_day
+              - is_from_ads
+    columns:
+      - name: source_relation
+        description: The source of the record, if the unioning functionality is being used.
+      - name: _fivetran_synced
+        description: The timestamp of when the data was last synced with Fivetran
+      - name: date_day
+        description: The date of the metric
+        data_tests:
+          - not_null
+      - name: page_id
+        description: The ID of the Page
+        data_tests:
+          - not_null
+      - name: is_from_ads
+        description: "{{ doc('is_from_ads') }}"
+      - name: media_views
+        description: The number of times media/content was viewed on the Page for this paid or organic split

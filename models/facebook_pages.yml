@@ -35,7 +35,15 @@ models:
 
           NOTE: This field is deprecated and will not be populated following November, 2025.
       - name: media_views
-        description: The number of times media/content was viewed on the Post
+        description: The number of times media/content was viewed on the post. Falls back to the deprecated `impressions` field when media views are not available, so historical records keep their values.
+      - name: media_views_paid
+        description: The number of times media/content was viewed on the post from paid ads. Sourced from `lifetime_post_metrics_by_paid_organic`, and falls back to the deprecated `impressions_paid` field when that table has no record or isn't synced.
+      - name: media_views_organic
+        description: The number of times media/content was viewed on the post from organic reach. Sourced from `lifetime_post_metrics_by_paid_organic`, and falls back to the deprecated `impressions_organic` field when that table has no record or isn't synced.
+      - name: media_views_followers
+        description: The number of times media/content was viewed on the post by people who follow the Page. Sourced from `lifetime_post_metrics_by_followers`, and falls back to the deprecated `impressions_fan` field when that table has no record or isn't synced. Followers and non-followers don't always add up to `media_views`.
+      - name: media_views_non_followers
+        description: The number of times media/content was viewed on the post by people who don't follow the Page. Sourced from `lifetime_post_metrics_by_followers`, and only present when you sync that table.
       - name: video_avg_time_watched
         description: The average amount of time users watched the video.
       - name: video_view_time
@@ -91,7 +99,11 @@ models:
 
           NOTE: This field is deprecated and will not be populated following November, 2025.
       - name: media_views
-        description: The number of times media/content was viewed on the Page
+        description: The number of times media/content was viewed on the Page. Falls back to the deprecated `impressions` field when media views are not available, so historical records keep their values.
+      - name: media_views_paid
+        description: The number of times media/content was viewed on the Page from paid ads. Sourced from `daily_page_metrics_by_paid_organic`, and falls back to the deprecated `impressions_paid` field when that table has no record or isn't synced.
+      - name: media_views_organic
+        description: The number of times media/content was viewed on the Page from organic reach. Sourced from `daily_page_metrics_by_paid_organic`, and falls back to the deprecated `impressions_organic` field when that table has no record or isn't synced.
       - name: post_engagements
         description: The number of times people have engaged with your posts through reactions, comments, shares and more.
       - name: posts_impressions
