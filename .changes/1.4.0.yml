@@ -41,7 +41,7 @@ schema_data_changes:
       field.'
     new: '`media_views` falls back to the deprecated `impressions` field when media
       views are not available.'
-    is_breaking: false
+    is_breaking: true
     notes: Keeps a continuous view metric across records from before and after the
       November 2025 deprecation.
 new_features:
